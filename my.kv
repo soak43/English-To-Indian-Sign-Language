@@ -1,0 +1,55 @@
+#:import Factory kivy.factory.Factory
+
+<MyPopup@Popup>
+    auto_dismiss: False
+    #size_hint: 0.6,0.2
+    #pos_hint: {"x": 0.2, "top": 0.5}
+    title: "Help"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label: 
+            text: "For text input: Enter the text in the white space provided \nand click on 'Convert to ISL' button.\n For audio input: Click on the 'Take Audio Input' button.\n FAQs\n 1. How many words does this system support?\n A. The system, at the moment, can sign 50 words.\n 2. Does this system allow me to give input in regional languages.\n A. No, only English text or audio can be converted to\n Indian Sign Language"
+            font_size: 18
+        Button:
+            text: "Close"
+            font_size: 24
+            background_color: "#00FFCE"
+            on_release: root.dismiss()
+
+<MyLayout>
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: 50
+        spacing: 20
+
+        Label:
+            id: label1
+            text: "Enter an English Sentence"
+            font_size: 32
+            color: "#00FFCE"
+
+        TextInput:
+            id: sent_input
+            multiline: False
+            size_hint: (1, 0.5)
+
+        Button: 
+            text: "Convert to ISL"
+            font_size: 32
+            background_color: "#00FFCE"
+            on_press: root.presstext()
+
+        Button: 
+            text: "Take Audio Input"
+            font_size: 32
+            background_color: "#00FFCE"
+            on_press: root.audioinput()
+
+        Button: 
+            text: "Help"
+            font_size: 32
+            background_color: "#00FFCE"
+            on_release: Factory.MyPopup().open()

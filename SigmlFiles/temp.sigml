@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+
+<hns_sign gloss = "my">
+<hamnosys_manual>
+<hamfinger2/>
+<hamthumbacrossmod/>
+<hamextfingeri/>
+<hampalmr/>
+<hamchest/>
+<hamtouch/>
+</hamnosys_manual>
+</hns_sign>
+
+</sigml>
